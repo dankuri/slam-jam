@@ -1,2 +1,2 @@
-# mini-jam-122
+# slam-jam
 gayme development
