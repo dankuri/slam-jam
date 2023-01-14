@@ -62,3 +62,12 @@ position = Vector2( 512, 305 )
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 700, 311 )
 rotation = 3.31613
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="AmmoIndicator" type="Label" parent="UI"]
+margin_right = 147.0
+margin_bottom = 56.0
+text = "20"
+align = 1
+valign = 1
