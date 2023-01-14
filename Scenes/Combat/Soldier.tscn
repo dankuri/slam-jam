@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Combat/Assets/topdown-shooter/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Combat/Assets/topdown-shooter/PNG/Soldier 1/soldier1_reload.png" type="Texture" id=2]
+[ext_resource path="res://SlamJam/Soldier.cs" type="Script" id=3]
+[ext_resource path="res://Scenes/Combat/Bullet.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "reload",
+"speed": 1.0
+} ]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 30.0
+
+[node name="Soldier" type="KinematicBody2D"]
+position = Vector2( 512, 316 )
+script = ExtResource( 3 )
+Bullet = ExtResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "reload"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+current = true
+
+[node name="GunTip" type="Position2D" parent="."]
+position = Vector2( 24, 10 )
